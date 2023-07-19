@@ -1,1 +1,16 @@
-{% extends "base.html" %}{% block title %}Sign Up{% endblock %}
+{% extends "base.html" %}{% block title %}Sign Up{% endblock %}{% block content %}
+<!--Sends POST request after form submission-->
+<form method="POST">
+    <h3 class="center">Sign Up</h3>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="Enter email"
+        >
+    </div>
+</form>
+{% endblock %}
