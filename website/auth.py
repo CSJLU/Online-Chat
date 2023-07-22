@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, flash
-#from email_validator import validate_email
 
 auth = Blueprint('auth', __name__)
 
@@ -21,8 +20,7 @@ def sign_up():
         last_name = request.form.get('last-name')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
-        #email_info = validate_email(email, check_deliverability=True)
-        #if not email_info:
+
         if len(email) < 4:
             flash('Email must be greater than four characters.', category='error')
         elif len(first_name) < 2:
