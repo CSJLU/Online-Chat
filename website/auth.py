@@ -22,15 +22,15 @@ def sign_up():
         password2 = request.form.get('password2')
 
         if len(email) < 4:
-            flash('Email must be greater than four characters.', category='error')
+            flash('Email must be greater than four characters', category='error')
         elif len(first_name) < 2:
             flash('First name must be greater than one character', category='error')
         elif len(last_name) < 2:
-            flash('Last name must be greater than one characters.', category='error')
+            flash('Last name must be greater than one character', category='error')
         elif password1 != password2:
             flash('Passwords are not the same', category='error')
         elif len(password1) < 7:
-            flash('Password must be at least seven characters', category='error')
+            flash('Password must be at least seven characters', category='error') 
         else: 
             flash('Registration successful', category='success')
         
