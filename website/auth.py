@@ -18,10 +18,24 @@ def sign_up():
     if request.method == 'POST':
         email = request.form.get('email')
         first_name = request.form.get('first-name')
+        last_name = request.form.get('last-name')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
         #email_info = validate_email(email, check_deliverability=True)
         #if not email_info:
+        if len(email) < 4:
+            flash('Email must be greater than four characters.', category='error')
+        elif len(first_name) < 2:
+            flash('First name must be greater than one character', category='error')
+        elif len(last_name) < 2:
+            flash('Last name must be greater than one characters.', category='error')
+        elif password1 != password2:
+            flash('Passwords are not the same', category='error')
+        elif len(password1) < 7:
+            flash('Password must be at least seven characters', category='error')
+        else: 
+            flash('Registration successful', category='success')
+        
 
 
         
