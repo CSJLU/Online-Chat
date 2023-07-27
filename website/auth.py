@@ -15,9 +15,9 @@ def login():
 def logout():
     return "Logout"
 
-@auth.route('/chat', methods=['GET', 'POST'])
-def chat():
-    return render_template("chat.html")
+# @auth.route('/chat', methods=['GET', 'POST'])
+# def chat():
+#     return render_template("chat.html")
 
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
@@ -41,7 +41,7 @@ def sign_up():
             flash('Password must be at least seven characters', category='error') 
         else: 
             flash('Registration successful', category='success')
-            return redirect(url_for("auth.chat"))
+            #return redirect(url_for("auth.chat"))
         
 
 
