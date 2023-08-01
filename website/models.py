@@ -11,6 +11,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(150))
     notes = db.relationship('Note')
 
+#defines variables used for every note, foreign key relationship with User class
 class Note(db.Model):
     id = db.Column(db.Innteger, primary_key=True)
     data = db.Column(db.String(10000))
